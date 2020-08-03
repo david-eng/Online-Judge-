@@ -1,11 +1,11 @@
 import java.math.BigInteger;
 import java.util.Scanner;
 
+// Revisão de contrato.
 
-    // Revisão de contrato.
-
-public class URI1120 {
+public class URI11201 {
     private static Scanner input = new Scanner(System.in);
+
     public static void main(final String[] args) {
         String digito, sequencia, substituir;
         boolean fim = false;
@@ -18,16 +18,12 @@ public class URI1120 {
                 if (digito.equals("0") && sequencia.trim().equals(digito))
                     fim = true;
                 else {
-                    switch (substituir) {
-                        case "":
-                            System.out.println("0");
-                            break;
-                        default:
-                            BigInteger substituirInteiro = new BigInteger(substituir);
-                            System.out.println(substituirInteiro);
-                            break;
+                    if (substituir.equals("")) {
+                        System.out.println("0");
+                    } else {
+                        BigInteger substituirInteiro = new BigInteger(substituir);
+                        System.out.println(substituirInteiro);
                     }
-
                 }
             } catch (final NumberFormatException e) {
                 BigInteger substituirInt = new BigInteger(sequencia.trim());
