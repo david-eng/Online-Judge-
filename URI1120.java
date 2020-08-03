@@ -18,15 +18,18 @@ public class URI1120 {
                 if (digito.equals("0") && sequencia.trim().equals(digito))
                     fim = true;
                 else {
-                    if(substituir == "")
-                        System.out.println("0");
-                    else{
-                        BigInteger substituirInteiro = new BigInteger(substituir);
-                        System.out.println(substituirInteiro);
+                    switch (substituir) {
+                        case "":
+                            System.out.println("0");
+                            break;
+                        default:
+                            BigInteger substituirInteiro = new BigInteger(substituir);
+                            System.out.println(substituirInteiro);
+                            break;
                     }
-                    }
+
                 }
-                catch (final NumberFormatException e) {
+            } catch (final NumberFormatException e) {
                 BigInteger substituirInt = new BigInteger(sequencia.trim());
                 System.out.println(substituirInt);
             } finally {
